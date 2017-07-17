@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta charset='utf-8'/>
+	<title>慕课迎春</title>
+</head>
+<body>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#page1,#page2{width:100%;height:100%;position:absolute;}
+		#page1{background:red;}
+		#page2{background:blue;top:100%;}
+
+		#page1 #rallback{width:120px;height:120px;background:black;
+			position:absolute;top:50%;left:50%;margin:-60px 0 0 -60px; /*垂直居中*/
+			font-size:100px;text-align:center;line-height:120px;border-radius:20px;
+			font-weight:bold;
+			/*css3动画无限制的旋转*/
+		 	-webkit-animation: music_disc 4s linear infinite;
+		 	animation: music_disc 4s linear infinite;
+		 	/*-webkit-animation-direction:alternate;*/   /*//平滑的过渡---反方向运动*/
+		}
+		
+		/*css3动画的旋转*/
+		@-webkit-keyframes music_disc {
+		    0% {
+		        -webkit-transform: rotate(0deg);
+		            -ms-transform: rotate(0deg);
+		             -o-transform: rotate(0deg);
+		                transform: rotate(0deg);
+		                background:black;
+		                color:red;
+		    }
+		    100% {
+		        -webkit-transform: rotate(360deg);
+		            -ms-transform: rotate(360deg);
+		             -o-transform: rotate(360deg);
+		                transform: rotate(360deg);
+		                 background:white;
+		                 color:blue;
+		    }
+		}
+
+	</style>
+
+	<audio src="http://sc1.111ttt.com/2016/5/02/03/195032222389.mp3" autoplay="autoplay" id="music"></audio>
+
+	<div id="page1">
+		<div id="rallback">福</div>
+	</div>
+
+	<div id="page2">
+	</div>
+
+	<!-- 
+		page1旋转暂停
+		animation-play-state属性
+		当你想在动画执行过程中暂停，并且接下来让动画接着执行。这时CSS的animation-play-state属性是非常有用的。你可以可以通过JavaScript像这样更改CSS(注意你的前缀)：
+		element.style.webkitAnimationPlayState = "paused";
+		element.style.webkitAnimationPlayState = "running";
+	 -->
+	<script type="text/javascript">
+		window.onload = function(){
+			
+			var flag = 1; //开启音乐
+			var music = document.getElementById('music');
+			var rallback = document.getElementById('rallback');
+
+			window.onclick = function(){
+			 	if( flag==1 ){
+			 		music.pause();  /*音乐关闭*/
+			 		flag = 0;
+			 		rallback.style.webkitAnimationPlayState = "paused";  //旋转动画暂停
+			 	}else{
+			 		music.play();   /*音乐开启*/
+			 		flag = 1;
+			 		rallback.style.webkitAnimationPlayState = "running";  //旋转动画暂停
+			 	}
+			}	
+		}		
+	</script>
+
+
+</body>
+</html>
