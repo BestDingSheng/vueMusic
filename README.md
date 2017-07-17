@@ -1,7 +1,6 @@
 
 # vueMusic
 vue vue-router vuex webpack jsonp flex 技术栈显示音乐播放器
-=======
 
 > A Vue.js project
 
@@ -22,4 +21,4 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
->>>>>>> first commit
+
