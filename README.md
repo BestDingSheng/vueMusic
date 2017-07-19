@@ -11,6 +11,9 @@
 
 ![](./preview/codeImg.png)
 
+### 效果展示
+![](./preview/muisc.gif)
+
 ## Build Setup
 
 ``` bash
@@ -26,9 +29,6 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-### 效果展示
-![](./preview/muisc.gif)
-
 
 ### 项目目录
 
@@ -92,4 +92,8 @@ npm run build --report
 
 11 directories, 44 files
 ```
+勉强还能用，还有蛮多bug会不断完善~
 
+QQ :727040141
+
+微信 :13122022388  欢迎交流
