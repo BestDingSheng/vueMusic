@@ -37,7 +37,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .rakingList{
     height:77vh;
     overflow: auto;

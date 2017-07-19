@@ -1,10 +1,11 @@
 <template>
   <div class="toplist" :style="backgroundUrl">
-    <div class="goraking" :style="backgroundCor+'color:#fff'">
-      <i class="iconfont icon-fanhui" @click="back"></i>
-
-      返回排行榜
-
+    <div class="goraking" :style="'color:#fff'">
+      <div class="positon" :style="backgroundCor"></div>
+      <div class="text-positon">
+        <i class="iconfont icon-fanhui" @click="back"></i>
+        返回排行榜
+       </div>
     </div>
 
     <ul class="gequlist" :style="'color:#fff;'">
@@ -14,7 +15,7 @@
         </h1>
         <p>巅峰榜流行指数</p>
       </div>
-      <li v-for="(val,index) in toplist.list" :style="backgroundCor">
+      <li v-for="(val,index) in toplist.list" :style="backgroundCor" @click="sendMusic(val)">
         <h2 class="xuhao">{{index + 1}}</h2>
         <div class="border">
           <p>{{val.name}}</p>
@@ -32,11 +33,7 @@
 </template>
 <script>
   import jsonp from 'jsonp'
-
-
-
-
-
+  import {mapGetters,mapActions} from 'vuex'
   export default{
 
     data(){
@@ -56,31 +53,17 @@
     },
     mounted: function () {
 
-      document.addEventListener('scroll', function(){
-
-      })
-
-      window.onscroll = function () {
-        var t = document.documentElement.scrollTop || document.body.scrollTop;
-        if (t > 0) {
-          alert(1111)
-        } else {
-          alert(2222)
-        }
-      }
     },
     activated: function () {
-
       this.hotlist()
     },
     deactivated: function () {
-
     },
     methods: {
         back(){
           this.$router.back(1)
         },
-
+      ...mapActions(['delmusic','selectmusic','sendMusic']),
       hotlist(){
         let vm = this;
         let id = this.$route.params.topid;
@@ -119,7 +102,8 @@
       },
       backgroundCor(){
         return "background-color:" + this.toplist.color + ";"
-      }
+      },
+      ...mapGetters([''])//actions.js里有注释功能
     }
 
   }
@@ -142,8 +126,6 @@
   .goraking{
     line-height: 40px;
     font-size :16px;
-    opacity: 0.6;
-    padding-left :15px;
     position: fixed;
     width :100%;
   }
@@ -164,6 +146,16 @@
   {
     padding-top : 200px;
 
+  }
+  .positon{
+    height: 41px;
+    opacity: .6;
+  }
+  .text-positon{
+    position: absolute;
+    top :0;
+    padding-left:15px;
+    width :100%;
   }
   .border
   {

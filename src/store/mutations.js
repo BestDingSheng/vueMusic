@@ -33,6 +33,11 @@ export default {
 
     },
   [types.SWITCHPLAY](state){
+    if(state.dom.src.indexOf('1111')!='-1'){
+      alert('请选择音乐')
+      return;
+    }
+
     if(state.playState){
       state.playState=false;
       state.dom.pause()
@@ -61,8 +66,8 @@ export default {
     }else{
       state.musicPlace=weizhi;
     }
-    console.log(state.musicPlace)
-    console.log(weizhi)
+    // console.log(state.musicPlace)
+    // console.log(weizhi)
     state.dom.src="http://ws.stream.qqmusic.qq.com/"+state.musicList[state.musicPlace].songid+".m4a?fromtag=46";
   },
   [types.BEFOREMUSIC](state,index){
@@ -73,10 +78,14 @@ export default {
     }else{
       state.musicPlace=weizhi;
     }
-
     console.log(state.musicPlace);
-
     state.dom.src="http://ws.stream.qqmusic.qq.com/"+state.musicList[state.musicPlace].songid+".m4a?fromtag=46";
   },
+  [types.SWITCHPROP](state){
+      state.leftPopup=!state.leftPopup
+  },
+  [types.PLAYEND](state){
+    state.playState=false;
+  }
 
 }

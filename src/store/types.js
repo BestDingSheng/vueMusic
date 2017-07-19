@@ -9,3 +9,6 @@ export const DELMUSIC='DELMUSIC' // 删除音乐
 export const SELECTMUSIC='SELECTMUSIC' // 选择音乐
 export const NEXTMUSIC='NEXTMUSIC'  // 下一首
 export const BEFOREMUSIC='BEFOREMUSIC'  // 上一首
+export const SWITCHPROP='SWITCHPROP' // 切换列表
+
+export const PLAYEND='PLAYEND' // 播放结束

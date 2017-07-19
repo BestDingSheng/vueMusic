@@ -111,7 +111,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   #back{
     padding:10px;
     /*margin-right :10px;*/

@@ -40,6 +40,12 @@ export default {
   },
   beforemusic({commit,state}){
     commit(types.BEFOREMUSIC)
+  },
+  switchprop({commit,state}){
+      commit(types.SWITCHPROP)
+  },
+  playend({commit,state}){
+    commit(types.PLAYEND)
   }
 
 

@@ -1,3 +1,5 @@
+let img = require('../assets/img/def-img.jpg')
+
 export default {
   playlist(state){
     return state.playlist
@@ -11,10 +13,10 @@ export default {
   songImg(state){
     if (state.musicList.length==0){
       // return '/static/img/def-img.jpg'
-      return '/static/img/def-img.9aec4b8.jpg'
+      return img
     }else {
       if (!state.musicList[state.musicPlace].img){
-        return '../assets/img/def-img.jpg'
+        return img
       }else {
         return state.musicList[state.musicPlace].img
       }
@@ -41,7 +43,10 @@ export default {
   },
   getMusicPlace(state){
     return state.musicPlace
-}
+},
+  leftstate(state){
+    return state.leftPopup
+  }
 
 
 }

@@ -9,4 +9,7 @@ export default {
   isLoadingShow:false,//是否显示loading
   isShowPlayInfo:false,//是否显示播放详情页
 
+    leftPopup:false
+
+
 }

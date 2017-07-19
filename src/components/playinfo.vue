@@ -1,10 +1,11 @@
 <template>
     <div class="palyinfo" :style="">
-      <div class="positon" :style="background"></div>
+
       <div class="title">
         <i class="iconfont icon-xia" id="back-icon" @click="ShowPlayInfo"></i>
 
-        {{nowSong.name}}----{{nowSong.singer}}
+       <div class="text-title">{{nowSong.name}}----{{nowSong.singer}}</div>
+         <i class="iconfont icon-liebiao liebiao" @click="switchprop"></i>
       </div>
       <div class="lyrics">
 
@@ -38,11 +39,12 @@
       <div class="foot">
 
         <i class="iconfont icon-icon-shangyishou" @click="beforemusic"></i>
-
         <i :class="{'iconfont':true,'icon-icon-bofang':!playState,
       'icon-icon-zanting':playState}"  @click="switchplay"></i>
         <i class="iconfont icon-icon-xiayishou" @click="nextmusic"></i>
-        <!--<i class="iconfont icon-liebiao" @click="openplaylist()"></i>-->
+
+        <!--<i class="iconfont icon-liebiao right" @click="nextmusic"></i>-->
+        <!--<i class="iconfont icon-liebiao" @click="switchprop"></i>-->
 
       </div>
 
@@ -116,7 +118,7 @@
     },
     methods:{
       ...mapActions(['ShowPlayInfo','openplaylist','switchplay','setCurrentTime',
-      'nextmusic','beforemusic'
+      'nextmusic','beforemusic','switchprop'
       ]),
 
       test(){
@@ -188,7 +190,7 @@
 
 }
 </script>
-<style scoped="">
+<style scoped>
 
   .positon{
     position: absolute;
@@ -222,6 +224,9 @@
     font-size:40px;
     padding :0 10px;
     color : #fff;
+  }
+  .foot .right{
+    flex:0;
   }
   .jindu span{
     color: #fff;
@@ -299,7 +304,20 @@
     width :70%;
     top :8px;
   }
+.liebiao{
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top :0;
 
+}
+.text-title{
+  width :80%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
   @-webkit-keyframes music_disc {
     0% {
       -webkit-transform: rotate(0deg);

@@ -1,11 +1,11 @@
 <template>
 
   <div class="header">
-    <i class="iconfont icon-liebiao" @click="open('left')"></i>
-    嘿嘿嘿
+    <!--<i class="iconfont icon-liebiao" @click="switchprop"></i>-->
+    我叫播放器
     <span></span>
 
-    <mu-popup position="left" popupClass="demo-popup-left" :open="leftPopup" @close="close('left')">
+    <mu-popup position="left" popupClass="demo-popup-left" :open="leftstate" @close="switchprop">
       <div class="leftMuH">
         <div>播放列表({{total}})首</div>
         <ul>
@@ -34,11 +34,11 @@ export default {
           }
       },
   computed:{
-    ...mapGetters(['playlist','getmusicList','total','getMusicPlace'])//actions.js里有注释功能
+    ...mapGetters(['playlist','getmusicList','total','getMusicPlace','leftstate'])//actions.js里有注释功能
 
   },
   methods:{
-    ...mapActions(['delmusic','selectmusic']),
+    ...mapActions(['delmusic','selectmusic','switchprop']),
     open (position) {
       this[position + 'Popup'] = true
     },
@@ -48,7 +48,10 @@ export default {
 
   },
   mounted(){
-
+//      let vm = this;
+//      document.addEventListener('click',function(){
+//          vm.switchprop()
+//      })
   }
 
 

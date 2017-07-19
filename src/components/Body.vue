@@ -58,6 +58,7 @@
 <script>
   import banner from './banner.vue'
   import axios from 'axios'
+  import {mapGetters,mapActions} from 'vuex'
   export default{
     data(){
       return {
@@ -73,7 +74,8 @@
             axios.get('../static/test.json').then((res)=>{
                 vm.arr=res.data.data;
             })
-        }
+        },
+      ...mapActions(['sendMusic'])
     },
     components: {
       "v-banner": banner

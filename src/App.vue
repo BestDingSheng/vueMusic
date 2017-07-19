@@ -30,7 +30,7 @@
       </transition>
 
     </div>
-    <audio src="" ref="audio" autoplay="autoplay" @timeupdate="getcurrentTime" @canplay="getDuration"></audio>
+    <audio src="" ref="audio" autoplay="autoplay" @ended="playend" @timeupdate="getcurrentTime" @canplay="getDuration"></audio>
 
 
     <!--<router-view></router-view>-->
@@ -68,7 +68,7 @@
               this.showNav=true;
             }
         },
-      ...mapActions(['ShowPlayInfo','getcurrentTime','getDuration']),
+      ...mapActions(['ShowPlayInfo','getcurrentTime','getDuration','playend']),
     },
     components: {
       'v-loading': Loading,

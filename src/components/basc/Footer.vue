@@ -11,19 +11,22 @@
 
   <ul class="palyBox">
     <li class="left" @click="ShowPlayInfo">
-      <img :src="songImg" width="50px" alt="">
+      <img :src="songImg" ref="imgBox" width="50px" alt="">
     </li>
     <li class="center">
       <span>{{nowSong.name}}</span>
       <p>{{nowSong.singer}}</p>
     </li>
+    <!--<li class="jin">-->
+      <!--<mu-circular-progress mode="determinate" :size="50" :strokeWidth="3" color="red" :value="value"/>-->
+    <!--</li>-->
     <li class="right">
 
       <i :class="{'iconfont':true,'icon-icon-bofang':!playState,
       'icon-icon-zanting':playState}"  @click="switchplay"></i>
       <!--<i class="iconfont icon-icon-zanting" v-if="playState" @click="switchplay"></i>-->
 
-      <i class="iconfont icon-liebiao" @click="openplaylist()"></i>
+      <i class="iconfont icon-liebiao" @click="switchprop"></i>
     </li>
   </ul>
 </div>
@@ -33,7 +36,8 @@
   export default{
      data(){
          return{
-           status:true
+           status:true,
+           value: 0
          }
      },
     computed:{
@@ -41,17 +45,33 @@
 
     },
     methods:{
-      ...mapActions(['closeplaylist','openplaylist','ShowPlayInfo','switchplay']),
+      ...mapActions(['closeplaylist','openplaylist','ShowPlayInfo','switchplay','switchprop']),
       test(){
           this.closeplaylist()
       }
 
     },
+    mounted(){
+      this.$refs.imgBox.style.webkitAnimationPlayState = "paused";
+    },
+    watch:{
+      playState(val,odl){
+        if(val){
+          this.$refs.imgBox.style.webkitAnimationPlayState = "running";
+        }else{
+          this.$refs.imgBox.style.webkitAnimationPlayState = "paused";
+        }
+      },
+    }
   }
 
 </script>
 <style scoped>
-
+  .jin{
+    position:absolute;
+    left :8px;
+    bottom: -2px;
+  }
   .fixdBox{
     height: 200px;
     width: 100%;
@@ -79,11 +99,15 @@
   }
   .left img{
     width :100%;
+    animation: music_disc 20s linear infinite;
   }
   .center{
     font-size :14px;
     width :140px;
     text-align: left;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .center p{
     font-size :12px;
