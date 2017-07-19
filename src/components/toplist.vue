@@ -128,6 +128,7 @@
     font-size :16px;
     position: fixed;
     width :100%;
+    max-width: 633px;
   }
   .goraking i{
     font-size: 20px;

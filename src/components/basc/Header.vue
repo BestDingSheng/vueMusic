@@ -5,7 +5,7 @@
     我叫播放器
     <span></span>
 
-    <mu-popup position="left" popupClass="demo-popup-left" :open="leftstate" @close="switchprop">
+    <mu-popup position="left" popupClass="demo-popup-left" id="left-pop" :open="leftstate" @close="switchprop">
       <div class="leftMuH">
         <div>播放列表({{total}})首</div>
         <ul>
@@ -60,10 +60,10 @@ export default {
 }
 
 </script>
-<style>
+<style scoped>
 
   .mu-popup-left{
-    width :70%;
+    width :70%!important;
     height: 100%;
     background:rgba(127, 36, 31,.5);
   }

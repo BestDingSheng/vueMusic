@@ -3,6 +3,10 @@
 
 技术栈 vue vue-router vuex webpack jsonp flex
 
+### 查看效果
+
+[戳我在线预览](http://bestdingsheng.github.io/vueMusic/dist/index.html)
+
 ## Build Setup
 
 ``` bash
@@ -18,6 +22,10 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+### 效果展示
+![](./preview/muisc.gif)
+
+
 ### 项目目录
 
 ```bash
@@ -80,5 +88,4 @@ npm run build --report
 
 11 directories, 44 files
 ```
-### 效果展示
-![](./preview/muisc.gif)
+

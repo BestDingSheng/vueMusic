@@ -17,3 +17,9 @@
     transform: rotate(360deg);
   }
 }
+
+.mu-popup-left{
+  width :70%!important;
+  height: 100%;
+  background:rgba(127, 36, 31,.5) !important;
+}

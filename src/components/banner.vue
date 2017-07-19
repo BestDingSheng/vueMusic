@@ -63,7 +63,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .carousel
   {
     width      : 100%;
