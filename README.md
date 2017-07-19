@@ -4,9 +4,10 @@
 技术栈 vue vue-router vuex webpack jsonp flex
 
 ### 查看效果
-
+~~~ 请使用chrome 手机模式预览
 [戳我在线预览](http://bestdingsheng.github.io/vueMusic/dist/index.html)
-
+**扫码预览**
+![](./preview/codeImg.png)
 ## Build Setup
 
 ``` bash
