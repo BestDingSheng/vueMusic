@@ -58,6 +58,7 @@
       this.hotlist()
     },
     deactivated: function () {
+        this.toplist.list=[];
     },
     methods: {
         back(){

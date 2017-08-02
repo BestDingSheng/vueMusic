@@ -10,7 +10,7 @@
 
         <transition enter-active-class="animated bounceInUp">
           <div class="block" v-if="hotListState">
-              <h1>热门</h1>
+              <h1 class="biaoqian">热门</h1>
               <ul class="hotlist">
                 <li v-for="(val,index) in arr" @click="search(val.k)">{{val.k}}</li>
               </ul>
@@ -25,7 +25,7 @@
           <ul class="searchList">
             <li v-for="(val,index) in searchList" @click="sendMusic(val)">
               <div><img :src="val.img" alt=""></div>
-              <div>
+              <div class="ge-info">
                 <h1>{{val.name}}</h1>
                 <p>{{val.singer}}</p>
               </div>
@@ -120,7 +120,7 @@
   .searchBox
   {
     text-align : left;
-    width      : 85%;
+    width      : 90%;
     margin : 10px auto;
 
   }
@@ -128,6 +128,9 @@
   {
     font-size  : 16px;
     margin-top : 10px;
+  }
+  .biaoqian{
+    margin :5px 0;
   }
   .btnSearch
   {
@@ -155,6 +158,8 @@
     font-size    : 14px;
     box-sizing   : border-box;
     padding-left : 30px;
+    appearance: none;
+    border: none;
 
   }
   .hotlist
@@ -172,6 +177,10 @@
     margin-bottom    : 10px;
     font-size: 12px;
 
+  }
+  .ge-info{
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .searchListBox
   {
@@ -193,10 +202,11 @@
   }
   .searchList li
   {
-    border-bottom : 1px #ccc solid;
+    /*border-bottom : 1px #ccc solid;*/
     display       : flex;
     overflow      : hidden;
     align-items: center;
+    margin-bottom: 5px;
   }
   .searchList li img
   {
@@ -206,12 +216,12 @@
   .searchList li h1,
   .searchList li p
   {
-    margin       : .5rem 0;
+    margin       : 0;
     padding-left : 1rem;
   }
   .searchList li h1
   {
-    font-size : 1.2rem;
+    font-size : 1.4rem;
   }
 
 </style>

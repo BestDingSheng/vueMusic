@@ -21,6 +21,7 @@ export default {
     state.currentTime=state.dom.currentTime
   },
   getDuration({state}){
+    console.log('开始了22222')
     state.duration=state.dom.duration;
   },
   switchplay({commit,state}){

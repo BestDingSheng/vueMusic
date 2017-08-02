@@ -58,6 +58,7 @@
 <script>
   import banner from './banner.vue'
   import axios from 'axios'
+  import jsonp from 'jsonp'
   import {mapGetters,mapActions} from 'vuex'
   export default{
     data(){
@@ -67,6 +68,13 @@
     },
     mounted(){
       this.list();
+
+      jsonp('https://api.douban.com/v2/movie/in_theaters',{
+        param: 'callback',
+      },function(err,res){
+          console.log(res)
+      })
+
     },
     methods:{
         list(){

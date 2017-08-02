@@ -8,7 +8,6 @@
 
     </div>
   </transition>
-
   <ul class="palyBox">
     <li class="left" @click="ShowPlayInfo">
       <img :src="songImg" ref="imgBox" width="50px" alt="">
@@ -100,6 +99,7 @@
   .left img{
     width :100%;
     animation: music_disc 20s linear infinite;
+    border-radius: 50%;
   }
   .center{
     font-size :14px;

@@ -41,6 +41,7 @@
         audio: '',
         title: '',
         status: false,
+
       }
     },
     mounted(){

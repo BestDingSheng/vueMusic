@@ -20,7 +20,7 @@
   }
   .navBar ul li{
     line-height: 6vh;
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     flex: 1;
     text-align: center;
   }

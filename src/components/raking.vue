@@ -58,14 +58,17 @@
     margin-left: 15px;
     width: 60%;
     overflow: hidden;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-around;
+
   }
   .rakingTitle{
-    margin: 8px 0;
+    margin:0;
     font-size: 1.4rem;
     color: #665757;
   }
   .rakingBox p{
-    margin: 5px 0;
     white-space: nowrap;
     font-size: 1rem;
   }

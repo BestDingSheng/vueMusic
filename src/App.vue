@@ -30,7 +30,7 @@
       </transition>
 
     </div>
-    <audio src="" ref="audio" autoplay="autoplay" @ended="playend" @timeupdate="getcurrentTime" @canplay="getDuration"></audio>
+    <audio src="" ref="audio" autoplay="autoplay" @canplaythrough="test" @ended="playend" @timeupdate="getcurrentTime" @canplay="getDuration"></audio>
 
 
     <!--<router-view></router-view>-->
@@ -59,6 +59,12 @@
       this.$store.dispatch('sendAudio', this.$refs.audio); //在模板编译完成后把audio元素发送给action
     },
     methods:{
+        test(){
+            console.log('开始了1111')
+//          this.$refs.audio.pause();
+//          this.$refs.audio.play();
+
+        },
         changePath(path){
             if(path.indexOf('toplist')>0){
               this.showHeader=false;
@@ -134,6 +140,7 @@
     line-height : 40px;
     color       : #fff;
     background  : #d43c33;
+    font-size: 1.2rem;
   }
   .body
   {

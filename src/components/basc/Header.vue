@@ -2,7 +2,7 @@
 
   <div class="header">
     <!--<i class="iconfont icon-liebiao" @click="switchprop"></i>-->
-    我叫播放器
+    我是播放器
     <span></span>
 
     <mu-popup position="left" popupClass="demo-popup-left" id="left-pop" :open="leftstate" @close="switchprop">

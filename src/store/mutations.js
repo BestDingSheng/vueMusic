@@ -19,17 +19,24 @@ export default {
     state.musicPlace=state.musicList.length-1;
     state.dom.src="http://ws.stream.qqmusic.qq.com/"+state.musicList[state.musicPlace].songid+".m4a?fromtag=46";
 
-    // console.log(state.dom.currentSrc)
-    setTimeout(function(){
-      console.log(state.dom.paused); // 判断音乐资源是否有效
-      if(state.dom.paused){
-        alert('加载失败换歌试试吧')
-        state.playState=false;
+    if(state.dom.error!=null){
+      alert('加载失败换歌试试吧')
+      state.playState=false;
+    }else{
+      state.playState=true;
+    }
 
-      }else{
-        state.playState=true;
-      }
-    },2000)
+    // setTimeout(function(){
+    //   console.log(state.dom.paused); // 判断音乐资源是否有效
+    //   console.log(state.dom.error+'')
+    //   if(state.dom.paused){
+    //     alert('加载失败换歌试试吧')
+    //     state.playState=false;
+    //
+    //   }else{
+    //     state.playState=true;
+    //   }
+    // },2000)
 
     },
   [types.SWITCHPLAY](state){
