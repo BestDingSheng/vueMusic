@@ -58,7 +58,8 @@ npm run build
 
 -------
 
-<div  align=center>
-    <center> 扫描二维码添加丁盛为你的好友</center ><center><font color=#f75000 size=>技术、户外、摄影、自驾 欢迎交流</font><center>
+<div align=center>
+    <center> 扫描二维码添加丁盛为你的好友</center >
+    <center><font color=#f75000 size=>技术、户外、摄影、自驾 欢迎交流</font><center>
     <img width='40%' align='center' src='http://www.ding1996.cn/uploads/wechat-qcode.jpg'>
 </div>
